@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quote Generator</title>
+
+<style>
+body{
+font-family: Arial, sans-serif;
+background: linear-gradient(135deg,#ff7e5f,#feb47b);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+margin:0;
+}
+
+.container{
+background:white;
+padding:30px;
+border-radius:10px;
+text-align:center;
+width:350px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+h1{
+margin-bottom:20px;
+}
+
+#quote{
+font-size:18px;
+margin:20px 0;
+}
+
+button{
+padding:10px 20px;
+font-size:16px;
+border:none;
+background:#ff7e5f;
+color:white;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#ff5a3c;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+<h1>Random Quote Generator</h1>
+
+<p id="quote">Click the button to get a quote!</p>
+
+<button onclick="newQuote()">New Quote</button>
+</div>
+
+<script>
+
+const quotes = [
+"Believe you can and you're halfway there.",
+"Success is not final, failure is not fatal.",
+"Do something today that your future self will thank you for.",
+"Dream big and dare to fail.",
+"Stay positive, work hard, make it happen."
+];
+
+function newQuote(){
+
+let random = Math.floor(Math.random() * quotes.length);
+
+document.getElementById("quote").innerText = quotes[random];
+
+}
+
+</script>
+
+</body>
+</html>
